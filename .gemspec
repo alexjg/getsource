@@ -6,10 +6,18 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = 'Get the source file path of the implementation of a given method'
   s.homepage = "http://github.com/tario/getsource"
-  s.has_rdoc = true
-  s.extra_rdoc_files = [ 'README' ]
-  s.rdoc_options << '--main' << 'README'
-  s.extensions = FileList["ext/**/extconf.rb"].to_a
-  s.files = Dir.glob("{examples,lib,test}/**/*.rb") + Dir.glob("ext/**/*.c") + Dir.glob("ext/**/*.h") + Dir.glob("ext/**/extconf.rb") +
-    [ 'AUTHORS', 'CHANGELOG', 'README', 'Rakefile', 'TODO' ]
+  s.extensions = ["ext/getsource_base/extconf.rb"]
+  s.files = [
+    "AUTHORS",
+    "CHANGELOG",
+    "README",
+    "Rakefile",
+    "TODO",
+    "examples/test1/main.rb",
+    "examples/test1/source1.rb",
+    "examples/test1/source2.rb",
+    "ext/getsource_base/extconf.rb",
+    "ext/getsource_base/getsource_base.c",
+    "lib/getsource.rb",
+  ]
 end
